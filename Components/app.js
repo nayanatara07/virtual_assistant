@@ -30,14 +30,13 @@ window.addEventListener('load', () => {
     wishMe();
 });
 
-// Check for SpeechRecognition support
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 if (SpeechRecognition) {
     console.log("Speech Recognition is supported in this browser.");
     const recognition = new SpeechRecognition();
-    recognition.lang = 'en-US'; // Ensure the correct language is set
-    recognition.interimResults = false; // Set to false to get final results
+    recognition.lang = 'en-US'; 
+    recognition.interimResults = false; 
 
     recognition.onstart = () => {
         console.log('Voice recognition activated. Try speaking into the microphone.');
